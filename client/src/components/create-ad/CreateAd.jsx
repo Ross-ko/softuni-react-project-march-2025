@@ -1,9 +1,23 @@
+import { useNavigate } from "react-router";
+
+import marketService from "../../services/marketService.js";
+
 export default function CreateAd() {
+    const navigate = useNavigate();
+    
+    const submitAction = async (formData) => {
+        const adData = Object.fromEntries(formData);
+
+        await marketService.create(adData);
+
+        navigate("/market");
+    };
+
     return (
         <section id="create">
             <div className="form form-item">
                 <h2>Share Your item</h2>
-                <form className="create-form">
+                <form className="create-form" action={submitAction}>
                     <input
                         type="text"
                         name="item"

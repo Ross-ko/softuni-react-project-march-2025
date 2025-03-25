@@ -1,4 +1,13 @@
+import { useEffect } from "react";
+import marketService from "../../services/marketService.js";
+
 export default function Market() {
+    useEffect(() => {
+        marketService.getAll().then((result) => {
+            console.log(result);
+        });
+    }, []);
+
     return (
         <>
             {/* <!-- Dashboard page --> */}
