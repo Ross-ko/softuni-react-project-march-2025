@@ -1,11 +1,12 @@
-import "./App.css";
 import { Route, Routes } from "react-router";
+
 import Header from "./components/header/Header";
 import Home from "./components/home/Home";
 import Login from "./components/login/Login";
 import Register from "./components/register/Register";
 import Market from "./components/market/Market";
 import CreateAd from "./components/create-ad/CreateAd";
+import "./App.css";
 
 function App() {
     return (
