@@ -2,16 +2,13 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router";
 import marketService from "../../services/marketService.js";
 
-export default function DetailsAd() {
+export default function DetailsAd(email) {
     const navigate = useNavigate();
     const [ad, setAd] = useState({});
     const { itemId } = useParams();
 
     useEffect(() => {
-        (async () => {
-            const result = await marketService.getOne(itemId);
-            setAd(result);
-        })();
+        marketService.getOne(itemId).then(setAd);
     }, [itemId]);
 
     const adDeleteClickHandler = async () => {
@@ -25,7 +22,7 @@ export default function DetailsAd() {
 
         await marketService.delete(itemId);
 
-        navigate('/market');
+        navigate("/market");
     };
 
     return (

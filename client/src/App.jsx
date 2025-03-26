@@ -30,7 +30,7 @@ function App() {
                     <Route path="/market/sell" element={<CreateAd />} />
                     <Route
                         path="/market/:itemId/details"
-                        element={<DetailsAd />}
+                        element={<DetailsAd email={email} />}
                     />
                     <Route path="/market/:itemId/edit" element={<EditAd />} />
                 </Routes>
