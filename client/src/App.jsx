@@ -6,6 +6,7 @@ import Login from "./components/login/Login";
 import Register from "./components/register/Register";
 import Market from "./components/market/Market";
 import CreateAd from "./components/create-ad/CreateAd";
+import DetailsAd from "./components/details-ad/DetailsAd";
 import "./App.css";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
                     <Route path="/register" element={<Register />} />
                     <Route path="/market" element={<Market />} />
                     <Route path="/market/sell" element={<CreateAd />} />
+                    <Route path="/market/:itemId/details" element={<DetailsAd />} />
                 </Routes>
             </main>
         </div>

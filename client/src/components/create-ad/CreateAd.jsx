@@ -34,7 +34,7 @@ export default function CreateAd() {
                         type="text"
                         name="price"
                         id="price"
-                        placeholder="Price in Euro"
+                        placeholder="Price in Eddies"
                     />
                     <input
                         type="text"
