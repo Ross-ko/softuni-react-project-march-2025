@@ -14,4 +14,7 @@ export default {
     getOne(itemId) {
         return request.get(`${baseUrl}/${itemId}`);
     },
+    delete(itemId) {
+        return request.delete(`${baseUrl}/${itemId}`);
+    },
 };

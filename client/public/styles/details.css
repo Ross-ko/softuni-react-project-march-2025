@@ -56,7 +56,12 @@ span {
   display: flex;
   justify-content: center;
   margin-bottom: 5px;
-  
+}
+
+#delete-btn {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
 }
 
 #action-buttons a {
@@ -70,7 +75,60 @@ span {
   background: rgb(16, 174, 214);
   border-radius: 5px;
 }
+
+#delete-btn {
+  text-decoration: none;
+  margin: auto 50px;
+  margin-bottom: 10px;
+  font-size: 26px;
+  width: 130px;
+  text-align: center;
+  color: white;
+  background: rgb(16, 174, 214);
+  border-radius: 5px;
+}
+
 #action-buttons a:hover {
   background: #ffffff;
   color: black;
+}
+
+#delete-btn:hover {
+  background: #ffffff;
+  color: black;
+}
+
+#delete-btn {
+  all: unset;
+  display: inline-block;
+  text-decoration: none;
+  margin: auto 50px;
+  margin-bottom: 10px;
+  font-size: 26px;
+  width: 130px;
+  text-align: center;
+  color: white;
+  background: rgb(16, 174, 214);
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px 15px;
+  border: none;
+}
+
+#action-buttons a {
+  display: inline-block;
+  text-decoration: none;
+  margin: auto 50px;
+  margin-bottom: 10px;
+  font-size: 26px;
+  width: 130px;
+  height: 40px;
+  text-align: center;
+  color: white;
+  background: rgb(16, 174, 214);
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px 0;
+  line-height: 40px;
+  border: none;
 }
