@@ -16,5 +16,14 @@
         "type": "Legs Cyberware",
         "description": "The Reinforced Tendons are the best Legs Cyberware from a sheer mobility perspective, as it’s a piece of Cyberware that pairs brilliantly with the Reflexes Attribute due to its small Crit Chance bonus, and the Air Dash perk that will allow players to synergize a double jump with an air dash to reach high speeds as they traverse the streets of Night City.",
         "_id": "83edc5dc-c244-4fcf-a78f-767538fe7ed4"
+    },
+    "a187a4e4-4008-4f0c-bd79-1afc77fbed81": {
+        "item": "Second Heart",
+        "imageUrl": "https://static.wikia.nocookie.net/cyberpunk/images/1/1e/SecondHeart.png/revision/latest?cb=20230929160656",
+        "price": "19947",
+        "availability": "Ripperdocs",
+        "type": "Circulatory System",
+        "description": "This fully revives you if your health is depleted. With a cooldown of only two minutes, this can make you almost invincible.",
+        "_id": "a187a4e4-4008-4f0c-bd79-1afc77fbed81"
     }
 }

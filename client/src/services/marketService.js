@@ -6,7 +6,11 @@ export default {
     create(adData) {
         return request.post(baseUrl, adData);
     },
-    getAll() {
-        return request.get(baseUrl);
+    async getAll() {
+        const result = await request.get(baseUrl);
+
+        const advertisements = Object.values(result);
+
+        return advertisements;
     },
 };

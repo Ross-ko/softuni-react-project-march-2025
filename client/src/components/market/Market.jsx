@@ -1,12 +1,15 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import marketService from "../../services/marketService.js";
 
 export default function Market() {
+    const [advertisements, setAd] = useState([]);
+
     useEffect(() => {
-        marketService.getAll().then((result) => {
-            console.log(result);
-        });
+        marketService.getAll().then(setAd)
     }, []);
+
+    console.log(advertisements);
+    
 
     return (
         <>
