@@ -46,7 +46,7 @@ export default function DetailsAd() {
                     </div>
                     {/* <!--Edit and Delete are only for creator--> */}
                     <div id="action-buttons">
-                        <Link to="" id="edit-btn">
+                        <Link id="edit-btn" to={`/market/${itemId}/edit`}>
                             Edit
                         </Link>
                         <button onClick={adDeleteClickHandler} id="delete-btn">
