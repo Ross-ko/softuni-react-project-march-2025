@@ -11,11 +11,19 @@ export default function EditAd() {
         marketService.getOne(itemId).then(setAd);
     }, [itemId]);
 
+    const formAction = async (formData) => {
+        const adData = Object.fromEntries(formData);
+
+        await marketService.edit(itemId, adData);
+
+        navigate(`/market/${itemId}/details`);
+    };
+
     return (
         <section id="edit">
             <div className="form form-item">
                 <h2>Edit Your Item</h2>
-                <form className="edit-form">
+                <form action={formAction} className="edit-form">
                     <input
                         type="text"
                         name="item"

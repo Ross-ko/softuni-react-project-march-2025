@@ -14,6 +14,9 @@ export default {
     getOne(itemId) {
         return request.get(`${baseUrl}/${itemId}`);
     },
+    edit(itemId, adData) {
+        return request.put(`${baseUrl}/${itemId}`, { ...adData, _id: itemId });
+    },
     delete(itemId) {
         return request.delete(`${baseUrl}/${itemId}`);
     },
