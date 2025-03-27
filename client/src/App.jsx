@@ -12,10 +12,10 @@ import EditAd from "./components/edit-ad/EditAd";
 import "./App.css";
 
 function App() {
-    const [email, setEmail] = useState();
+    const [authData, setAuthData] = useState({});
 
-    const userLoginHandler = (authData) => {
-        setEmail(authData.email);
+    const userLoginHandler = (data) => {
+        setAuthData(data);
     };
 
     return (
@@ -30,7 +30,7 @@ function App() {
                     <Route path="/market/sell" element={<CreateAd />} />
                     <Route
                         path="/market/:itemId/details"
-                        element={<DetailsAd email={email} />}
+                        element={<DetailsAd email={authData.email} />}
                     />
                     <Route path="/market/:itemId/edit" element={<EditAd />} />
                 </Routes>
