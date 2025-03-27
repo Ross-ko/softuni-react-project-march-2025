@@ -17,10 +17,14 @@ export const useLogin = () => {
         }
 
         try {
-            const authData = await request.post(`${baseUrl}/login`, {
-                email,
-                password,
-            }, { signal: abortControllerRef.current.signal });
+            const authData = await request.post(
+                `${baseUrl}/login`,
+                {
+                    email,
+                    password,
+                },
+                { signal: abortControllerRef.current.signal }
+            );
 
             return authData;
         } catch (error) {
@@ -34,4 +38,37 @@ export const useLogin = () => {
     }, []);
 
     return { login };
+};
+
+export const useRegister = () => {
+    const abortControllerRef = useRef(null);
+
+    const register = async (email, password) => {
+        abortControllerRef.current = new AbortController();
+
+        try {
+            const response = await request.post(
+                `${baseUrl}/register`,
+                { email, password },
+                { signal: abortControllerRef.current.signal }
+            );
+            return response;
+        } catch (error) {
+            if (error.name === "AbortError") {
+                console.warn("Registration request was aborted");
+            } else {
+                throw new Error(error.message || "Registration failed");
+            }
+        }
+    };
+
+    useEffect(() => {
+        return () => {
+            if (abortControllerRef.current) {
+                abortControllerRef.current.abort();
+            }
+        };
+    }, []);
+
+    return { register };
 };

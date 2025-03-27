@@ -8,20 +8,23 @@
     clip-path: polygon(7% 0, 100% 0, 100% 20%, 100% 59%, 93% 100%, 20% 100%, 0 100%, 0 43%);
 }
 
-
 .notification {
     font-size: 1.5em;
     color: #ffffff;
-    display: none;
     text-align: right;
+    display: none;
 }
 
-.notification>span {
+.notification.show { 
+    display: block;
+}
+
+.notification > span {
     display: inline-block;
-    padding:  0.5em 2em 0.5em 2em;
+    padding: 0.5em 2em;
     border-radius: 2px;
 }
 
-#errorBox>span {
+#errorBox > span {
     background: rgb(199, 9, 216);
 }
