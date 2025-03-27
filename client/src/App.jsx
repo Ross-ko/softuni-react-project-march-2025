@@ -11,6 +11,7 @@ import Market from "./components/market/Market";
 import CreateAd from "./components/create-ad/CreateAd";
 import DetailsAd from "./components/details-ad/DetailsAd";
 import EditAd from "./components/edit-ad/EditAd";
+import Logout from "./components/logout/Logout";
 import "./App.css";
 
 function App() {
@@ -20,18 +21,22 @@ function App() {
         setAuthData(data);
     };
 
+    const userLogoutHandler = () => {
+        setAuthData({});
+    };
+
     return (
-        <UserContext.Provider value={{ ...authData, userLoginHandler }}>
+        <UserContext.Provider
+            value={{ ...authData, userLoginHandler, userLogoutHandler }}
+        >
             <div id="wrapper">
                 <Header />
                 <main id="main-element">
                     <Routes>
                         <Route path="/" element={<Home />} />
-                        <Route
-                            path="/login"
-                            element={<Login />}
-                        />
+                        <Route path="/login" element={<Login />} />
                         <Route path="/register" element={<Register />} />
+                        <Route path="/logout" element={<Logout />} />
                         <Route path="/market" element={<Market />} />
                         <Route path="/market/sell" element={<CreateAd />} />
                         <Route
