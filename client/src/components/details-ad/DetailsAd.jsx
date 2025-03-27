@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router";
 import marketService from "../../services/marketService.js";
+import { UserContext } from "../../context/UserContext";
 
-export default function DetailsAd(email) {
+export default function DetailsAd() {
     const navigate = useNavigate();
+    const { email } = useContext(UserContext);
     const [ad, setAd] = useState({});
     const { itemId } = useParams();
 

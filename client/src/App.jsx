@@ -1,6 +1,8 @@
 import { Route, Routes } from "react-router";
 import { useState } from "react";
 
+import { UserContext } from "./context/UserContext";
+
 import Header from "./components/header/Header";
 import Home from "./components/home/Home";
 import Login from "./components/login/Login";
@@ -19,23 +21,31 @@ function App() {
     };
 
     return (
-        <div id="wrapper">
-            <Header />
-            <main id="main-element">
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/login" element={<Login onLogin={userLoginHandler} />} />
-                    <Route path="/register" element={<Register />} />
-                    <Route path="/market" element={<Market />} />
-                    <Route path="/market/sell" element={<CreateAd />} />
-                    <Route
-                        path="/market/:itemId/details"
-                        element={<DetailsAd email={authData.email} />}
-                    />
-                    <Route path="/market/:itemId/edit" element={<EditAd />} />
-                </Routes>
-            </main>
-        </div>
+        <UserContext.Provider value={{ ...authData, userLoginHandler }}>
+            <div id="wrapper">
+                <Header />
+                <main id="main-element">
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route
+                            path="/login"
+                            element={<Login />}
+                        />
+                        <Route path="/register" element={<Register />} />
+                        <Route path="/market" element={<Market />} />
+                        <Route path="/market/sell" element={<CreateAd />} />
+                        <Route
+                            path="/market/:itemId/details"
+                            element={<DetailsAd />}
+                        />
+                        <Route
+                            path="/market/:itemId/edit"
+                            element={<EditAd />}
+                        />
+                    </Routes>
+                </main>
+            </div>
+        </UserContext.Provider>
     );
 }
 
