@@ -1,5 +1,5 @@
-const request = async (method, url, data) => {
-    const options = {
+const request = async (method, url, data, options = {}) => {
+    options = {
         method,
         headers: data ? { "Content-Type": "application/json" } : {},
         body: data ? JSON.stringify(data) : undefined,
