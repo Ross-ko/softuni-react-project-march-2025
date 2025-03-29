@@ -1,9 +1,11 @@
+import { Link } from "react-router-dom";
+
 export default function Slider() {
     return (
-        <section className=" slider_section position-relative">
+        <section className="slider_section position-relative">
             <div className="container">
                 <div className="custom_nav2">
-                    <nav className="navbar navbar-expand-lg custom_nav-container ">
+                    <nav className="navbar navbar-expand-lg custom_nav-container">
                         <button
                             className="navbar-toggler"
                             type="button"
@@ -19,52 +21,59 @@ export default function Slider() {
                             className="collapse navbar-collapse"
                             id="navbarSupportedContent"
                         >
-                            <div className="d-flex  flex-column flex-lg-row align-items-center">
-                                <ul className="navbar-nav  ">
+                            <div className="d-flex flex-column flex-lg-row align-items-center">
+                                <ul className="navbar-nav">
                                     <li className="nav-item active">
-                                        <a
-                                            className="nav-link"
-                                            href="index.html"
-                                        >
+                                        <Link className="nav-link" to="/">
                                             Home{" "}
                                             <span className="sr-only">
                                                 (current)
                                             </span>
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <a
-                                            className="nav-link"
-                                            href="about.html"
-                                        >
+                                        <Link className="nav-link" to="/about">
                                             About{" "}
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <a
+                                        <Link
                                             className="nav-link"
-                                            href="service.html"
+                                            to="/service"
                                         >
                                             Services{" "}
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <a
+                                        <Link
                                             className="nav-link"
-                                            href="contact.html"
+                                            to="/contact"
                                         >
                                             Contact Us
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link" href="#">
+                                        <Link className="nav-link" to="/login">
                                             Login
-                                        </a>
+                                        </Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link
+                                            className="nav-link"
+                                            to="/register"
+                                        >
+                                            Register
+                                        </Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link className="nav-link" to="/logout">
+                                            Logout
+                                        </Link>
                                     </li>
                                 </ul>
                                 <form className="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
                                     <button
-                                        className="btn  my-2 my-sm-0 nav_search-btn"
+                                        className="btn my-2 my-sm-0 nav_search-btn"
                                         type="submit"
                                     />
                                 </form>
@@ -110,19 +119,25 @@ export default function Slider() {
                                                 Ut enim ad minim veniam
                                             </p>
                                             <div className="btn-box">
-                                                <a href="" className="btn-1">
+                                                <Link
+                                                    to="/read-more"
+                                                    className="btn-1"
+                                                >
                                                     Read More
-                                                </a>
-                                                <a href="" className="btn-2">
+                                                </Link>
+                                                <Link
+                                                    to="/quote"
+                                                    className="btn-2"
+                                                >
                                                     Get A Quote
-                                                </a>
+                                                </Link>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className="carousel-item ">
+                        <div className="carousel-item">
                             <div className="container">
                                 <div className="row">
                                     <div className="col-lg-6 col-md-7 offset-md-6 offset-md-5">
@@ -137,19 +152,25 @@ export default function Slider() {
                                                 Ut enim ad minim veniam
                                             </p>
                                             <div className="btn-box">
-                                                <a href="" className="btn-1">
+                                                <Link
+                                                    to="/read-more"
+                                                    className="btn-1"
+                                                >
                                                     Read More
-                                                </a>
-                                                <a href="" className="btn-2">
+                                                </Link>
+                                                <Link
+                                                    to="/quote"
+                                                    className="btn-2"
+                                                >
                                                     Get A Quote
-                                                </a>
+                                                </Link>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className="carousel-item ">
+                        <div className="carousel-item">
                             <div className="container">
                                 <div className="row">
                                     <div className="col-lg-6 col-md-7 offset-md-6 offset-md-5">
@@ -164,12 +185,18 @@ export default function Slider() {
                                                 Ut enim ad minim veniam
                                             </p>
                                             <div className="btn-box">
-                                                <a href="" className="btn-1">
+                                                <Link
+                                                    to="/read-more"
+                                                    className="btn-1"
+                                                >
                                                     Read More
-                                                </a>
-                                                <a href="" className="btn-2">
+                                                </Link>
+                                                <Link
+                                                    to="/quote"
+                                                    className="btn-2"
+                                                >
                                                     Get A Quote
-                                                </a>
+                                                </Link>
                                             </div>
                                         </div>
                                     </div>
