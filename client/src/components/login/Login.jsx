@@ -1,7 +1,7 @@
-import React, { useState, useContext } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLogin } from "../../authService/authService.js";
-import { UserContext } from "../../authContext/AuthContext";
+import { UserContext } from "../../context/UserContext.jsx";
 import "./auth.css";
 
 export default function Login() {
@@ -16,12 +16,21 @@ export default function Login() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError(null);
+
         try {
             const authData = await login(email, password);
+
+            if (!authData || !authData.accessToken) {
+                setError("Wrong Input!");
+                setPassword("");
+                return;
+            }
+
             userLoginHandler(authData);
             navigate("/");
         } catch (err) {
-            setError(err.message || "Login failed");
+            setError("Error!");
+            setPassword("");
         }
     };
 

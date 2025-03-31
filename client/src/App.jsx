@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route, Outlet } from "react-router-dom";
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+    Outlet,
+} from "react-router-dom";
 import Header from "./components/header/Header";
 import Slider from "./components/slider/Slider";
 import Login from "./components/login/Login";
@@ -8,7 +13,7 @@ import Service from "./components/services/Services";
 import Contact from "./components/contact/Contact";
 import Home from "./components/home/Home";
 import About from "./components/about/About";
-import { UserProvider } from './authContext/AuthContext';
+import { UserProvider } from "./userProvider/UserProvider";
 
 function Layout() {
     return (

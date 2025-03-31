@@ -1,6 +1,6 @@
 import { useEffect, useCallback, useRef, useContext } from "react";
 import request from "../utils/request.js";
-import { UserContext } from "../authContext/AuthContext";
+import { UserContext } from "../context/UserContext";
 
 const baseUrl = "http://localhost:3030/users";
 

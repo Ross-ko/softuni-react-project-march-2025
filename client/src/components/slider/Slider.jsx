@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { UserContext } from "../../context/UserContext";
 
 export default function Slider() {
+    const { user } = useContext(UserContext);
+
     return (
         <section className="slider_section position-relative">
             <div className="container">
@@ -52,24 +56,35 @@ export default function Slider() {
                                             Contact Us
                                         </Link>
                                     </li>
-                                    <li className="nav-item">
-                                        <Link className="nav-link" to="/login">
-                                            Login
-                                        </Link>
-                                    </li>
-                                    <li className="nav-item">
-                                        <Link
-                                            className="nav-link"
-                                            to="/register"
-                                        >
-                                            Register
-                                        </Link>
-                                    </li>
-                                    <li className="nav-item">
-                                        <Link className="nav-link" to="/logout">
-                                            Logout
-                                        </Link>
-                                    </li>
+                                    {user ? (
+                                        <li className="nav-item">
+                                            <Link
+                                                className="nav-link"
+                                                to="/logout"
+                                            >
+                                                Logout
+                                            </Link>
+                                        </li>
+                                    ) : (
+                                        <>
+                                            <li className="nav-item">
+                                                <Link
+                                                    className="nav-link"
+                                                    to="/login"
+                                                >
+                                                    Login
+                                                </Link>
+                                            </li>
+                                            <li className="nav-item">
+                                                <Link
+                                                    className="nav-link"
+                                                    to="/register"
+                                                >
+                                                    Register
+                                                </Link>
+                                            </li>
+                                        </>
+                                    )}
                                 </ul>
                                 <form className="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
                                     <button
@@ -137,6 +152,7 @@ export default function Slider() {
                                 </div>
                             </div>
                         </div>
+                        {/* Останалите carousel items */}
                         <div className="carousel-item">
                             <div className="container">
                                 <div className="row">
