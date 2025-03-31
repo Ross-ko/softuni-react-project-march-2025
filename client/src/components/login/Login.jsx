@@ -1,41 +1,53 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { useLogin } from "../../authService/authService.js";
+import { UserContext } from "../../authContext/AuthContext";
 import "./auth.css";
 
 export default function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const navigate = useNavigate();
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState(null);
+    const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Тук добавете логика за вход (например API заявка)
-    localStorage.setItem("token", "yourToken");
-    navigate("/");
-  };
+    const { login } = useLogin();
+    const { userLoginHandler } = useContext(UserContext);
 
-  return (
-    <div className="auth-container">
-      <div className="auth-form">
-        <h2>Login</h2>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-          <button type="submit">Login</button>
-        </form>
-      </div>
-    </div>
-  );
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setError(null);
+        try {
+            const authData = await login(email, password);
+            userLoginHandler(authData);
+            navigate("/");
+        } catch (err) {
+            setError(err.message || "Login failed");
+        }
+    };
+
+    return (
+        <div className="auth-container">
+            <div className="auth-form">
+                <h2>Login</h2>
+                <form onSubmit={handleSubmit}>
+                    <input
+                        type="email"
+                        placeholder="Email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
+                    />
+                    <input
+                        type="password"
+                        placeholder="Password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                    />
+                    <button type="submit">Login</button>
+                    {error && <p className="error">{error}</p>}
+                </form>
+            </div>
+        </div>
+    );
 }

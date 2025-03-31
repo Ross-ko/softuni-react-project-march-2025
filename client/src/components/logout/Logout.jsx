@@ -1,15 +1,15 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../../authContext/AuthContext";
 
 export default function Logout() {
-    const navigate = useNavigate();
+  const { userLogoutHandler } = useContext(UserContext);
+  const navigate = useNavigate();
 
-    useEffect(() => {
-        // Изчистваме данните за сесията, напр. токена
-        localStorage.removeItem("token");
-        // Пренасочваме към началната страница
-        navigate("/");
-    }, [navigate]);
+  useEffect(() => {
+    userLogoutHandler();
+    navigate("/");
+  }, [userLogoutHandler, navigate]);
 
-    return null;
+  return null;
 }
