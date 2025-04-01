@@ -13,7 +13,11 @@ import Service from "./components/services/Services";
 import Contact from "./components/contact/Contact";
 import Home from "./components/home/Home";
 import About from "./components/about/About";
-import { UserProvider } from "./userProvider/UserProvider";
+import { UserProvider } from "./utils/UserProvider";
+import Catalog from "./components/catalog/Catalog";
+import CreateWorkout from "./components/catalog/createWorkout/CreateWorkout";
+import WorkoutDetails from "./components/catalog/detailsWorkout/WorkoutDetails";
+import EditWorkout from "./components/catalog/editWorkout/EditWorkout";
 
 function Layout() {
     return (
@@ -36,6 +40,10 @@ function App() {
                         <Route path="/register" element={<Register />} />
                         <Route path="/logout" element={<Logout />} />
                         <Route path="/service" element={<Service />} />
+                        <Route path="/catalog" element={<Catalog />} />
+                        <Route path="/catalog/create" element={<CreateWorkout />} />
+                        <Route path="/catalog/:workoutId" element={<WorkoutDetails/>} />
+                        <Route path="/catalog/:workoutId/edit" element={<EditWorkout />} />
                         <Route path="/contact" element={<Contact />} />
                         <Route path="/about" element={<About />} />
                     </Route>
