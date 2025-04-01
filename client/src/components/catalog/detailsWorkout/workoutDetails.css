@@ -1,0 +1,48 @@
+.details-section {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .details-section .container {
+    max-width: 700px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .details-section img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .details-section h2 {
+    margin-bottom: 16px;
+    font-size: 28px;
+    color: #333;
+    text-align: center;
+  }
+  
+  .details-section p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+
+  .btn-back {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2a9d8f;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-back:hover {
+    background-color: #21867a;
+  }
+  
