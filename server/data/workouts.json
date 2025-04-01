@@ -1,0 +1,26 @@
+{
+    "9b3ff807-51d1-4ee4-ab7d-3bd72adbff3f": {
+        "imageUrl": "https://cdn.muscleandstrength.com/sites/default/files/styles/800x500/public/lean-man-and-woman-doing-a-fat-loss-workout-in-the-gym_0.jpg?itok=3Q6d_tKC",
+        "type": "Free Weights",
+        "date": "2025-02-04",
+        "time": "18:00",
+        "coach": "Rosen Ignatov",
+        "price": "30",
+        "duration": "1h 30m",
+        "level": "advanced",
+        "owner": "eadf125d-5d0d-4b4a-80ea-a2d4711ec864",
+        "_id": "9b3ff807-51d1-4ee4-ab7d-3bd72adbff3f"
+    },
+    "59854270-f9f3-477b-a391-fc4e37b55af7": {
+        "imageUrl": "https://fitnessgold.bg/img/classes3-1.jpg",
+        "type": "Heavy Liftting",
+        "date": "2025-04-17",
+        "time": "21:00",
+        "coach": "Rosen Ignatov",
+        "price": "40",
+        "duration": "2h",
+        "level": "advanced",
+        "owner": "4dd04569-37fc-4dc0-87fe-48706a0cf342",
+        "_id": "59854270-f9f3-477b-a391-fc4e37b55af7"
+    }
+}
