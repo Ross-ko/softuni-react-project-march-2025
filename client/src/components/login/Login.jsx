@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLogin } from "../../authService/authService.js";
 import { UserContext } from "../../context/UserContext.jsx";
+import { Link } from "react-router-dom";
 import "./auth.css";
 
 export default function Login() {
@@ -16,6 +17,11 @@ export default function Login() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError(null);
+
+        if (!email || !password) {
+            setError("All fields please!");
+            return;
+        }
 
         try {
             const authData = await login(email, password);
@@ -38,7 +44,7 @@ export default function Login() {
         <div className="auth-container">
             <div className="auth-form">
                 <h2>Login</h2>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} noValidate>
                     <input
                         type="email"
                         placeholder="Email"
@@ -54,8 +60,11 @@ export default function Login() {
                         required
                     />
                     <button type="submit">Login</button>
-                    {error && <p className="error">{error}</p>}
                 </form>
+                {error && <p className="error">{error}</p>}
+                <p className="message">
+                    Don't have account? <Link to="/register">Register</Link>
+                </p>
             </div>
         </div>
     );

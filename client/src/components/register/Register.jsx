@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import { useState, useContext } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useRegister } from "../../authService/authService.js";
 import { UserContext } from "../../context/UserContext";
@@ -30,12 +30,21 @@ export default function Register() {
 
         try {
             const authData = await register(email, password);
-            console.log("Received authData:", authData); // check in console
+
+            if (!authData || !authData.accessToken) {
+                setError("User already exists!");
+                setPassword("");
+                setConfirmPassword("");
+                return;
+            }
+
             userLoginHandler(authData);
             navigate("/");
         } catch (err) {
             console.error("Registration error:", err);
             setError(err.message || "Registration failed");
+            setPassword("");
+            setConfirmPassword("");
         }
     };
 
