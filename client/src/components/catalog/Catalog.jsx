@@ -1,7 +1,7 @@
 import { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../context/UserContext";
-import workoutService from "../../workoutService/workoutService";
+import workoutService from "../../service/service";
 import "./catalog.css"
 
 export default function Catalog() {
