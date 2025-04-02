@@ -106,7 +106,7 @@ Both route guards are implemented in `client/src/guards/RouteGuards.jsx` and int
   Users can create, view, edit, and delete workout entries.
 
 - **Service Layer**:  
-  The `workoutService` (located in `client/src/workoutService/workoutService.js`) communicates with the backend REST API using helper functions defined in `request.js`.
+  The `workoutService` (located in `client/src/service/service.js`) communicates with the backend REST API using helper functions defined in `request.js`.
 
 ### 4.5 Form Validation and Error Handling
 
@@ -143,7 +143,7 @@ Right click on "server" folder, select "Open in Integrated Terminal" and run:
 
 5. **Access the Application**:
 Open your browser and navigate to:
-[text](http://localhost:5173/)
+[url](http://localhost:5173/)
 
 ## 6. Additional Enhancements and Future Improvements
 
