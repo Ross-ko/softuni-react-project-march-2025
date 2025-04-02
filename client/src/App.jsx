@@ -18,6 +18,7 @@ import Catalog from "./components/catalog/Catalog";
 import CreateWorkout from "./components/catalog/createWorkout/CreateWorkout";
 import WorkoutDetails from "./components/catalog/detailsWorkout/WorkoutDetails";
 import EditWorkout from "./components/catalog/editWorkout/EditWorkout";
+import { PrivateRoute, PublicRoute } from "./guards/RouteGuards";
 
 function Layout() {
     return (
@@ -36,16 +37,22 @@ function App() {
                 <Routes>
                     <Route element={<Layout />}>
                         <Route path="/" element={<Home />} />
-                        <Route path="/login" element={<Login />} />
-                        <Route path="/register" element={<Register />} />
-                        <Route path="/logout" element={<Logout />} />
-                        <Route path="/service" element={<Service />} />
+                        <Route element={<PublicRoute />}>
+                          <Route path="/login" element={<Login />} />
+                          <Route path="/register" element={<Register />} />
+                        </Route>
+                
+                        <Route element={<PrivateRoute />}>
+                          <Route path="/logout" element={<Logout />} />
+                          <Route path="/catalog/create" element={<CreateWorkout />} />
+                          <Route path="/catalog/:workoutId/edit" element={<EditWorkout />} />
+                        </Route>
+
                         <Route path="/catalog" element={<Catalog />} />
-                        <Route path="/catalog/create" element={<CreateWorkout />} />
-                        <Route path="/catalog/:workoutId" element={<WorkoutDetails/>} />
-                        <Route path="/catalog/:workoutId/edit" element={<EditWorkout />} />
+                        <Route path="/catalog/:workoutId" element={<WorkoutDetails />} />
                         <Route path="/contact" element={<Contact />} />
                         <Route path="/about" element={<About />} />
+                        <Route path="/service" element={<Service />} />
                     </Route>
                 </Routes>
             </Router>
