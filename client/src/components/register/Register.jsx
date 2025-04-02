@@ -14,9 +14,19 @@ export default function Register() {
     const { userLoginHandler } = useContext(UserContext);
     const navigate = useNavigate();
 
+    const validateEmail = (email) => {
+        const mail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return mail.test(email);
+      };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError(null);
+
+        if (!email || !validateEmail(email)) {
+            setError("Please enter valid email address!");
+            return;
+          }
 
         if (!email || !password || !confirmPassword) {
             setError("All fields please!");
